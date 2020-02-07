@@ -1,17 +1,15 @@
-<?php
-include "OnTheFlyDB.php";
-
-?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>On the Fly</title>
-	<link href="OnTheFly.css" rel="stylesheet" type="text/css" media="all">
+<link rel="stylesheet" type="text/css" href="OnTheFlycss.css" media="screen"/>
+
 </head>
 <body>
-<div class="content">
+
     <h1>On the fly!</h1>
     <hr/>
+	<center>
     <form method="POST">
         <label for="txtAirplanenumber">Airplanenumber</label>
         <input type="text" name="txtAirplanenumber" id="txtAirplanenumber">
@@ -27,7 +25,12 @@ include "OnTheFlyDB.php";
         <br/>
         <input type="submit" name="btnSave" value="Opslaan">
     </form>
+	</center>
     <?php
+
+include "OnTheFlyDB.php";
+
+
     // Als er op de knop btnSave geklikt is
     if(isset($_POST['btnSave'])) {
         // Tekstvelden uitlezen en opslaan in variable
@@ -48,13 +51,6 @@ include "OnTheFlyDB.php";
         }
     }
     ?>
-    <select>
-        <option value="All"> All Planes </option>
-        <option value="Flying"> Flying </option>
-        <option value="Landed"> Landed </option>
-        <option value="Crashed"> Crashed </option>
-        <option value="Repairing"> Repairing </option>
-    </select>
     <hr/>
     <table>
         <thead>
@@ -87,6 +83,13 @@ include "OnTheFlyDB.php";
         ?>
         </tbody>
     </table>
-</div>
+	<select>
+        <option value="All"> All Planes </option>
+        <option value="Flying"> Flying </option>
+        <option value="Landed"> Landed </option>
+        <option value="Crashed"> Crashed </option>
+        <option value="Repairing"> Repairing </option>
+    </select>
+
 </body>
 </html>
